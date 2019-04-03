@@ -11,12 +11,13 @@ class Api::EmployeesController < ApplicationController
       email: params[:email],
       phone: params[:phone],
       job_title: params[:job_title],
-      department_id: params[:department_id]
-      )
+      department_id: params[:department_id],
+      picture: params[:picture],
+    )
     if @employee.save
       render "show.json.jbuilder"
     else
-      render json: {errors: @employee.errors.full_messages}, status: :unprocessable_entity
+      render json: { errors: @employee.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
@@ -31,7 +32,7 @@ class Api::EmployeesController < ApplicationController
     if @employee.save
       render "show.json.jbuilder"
     else
-      render json: {errors: @employee.errors.full_messages}, status: :unprocessable_entity
+      render json: { errors: @employee.errors.full_messages }, status: :unprocessable_entity
     end
   end
 end

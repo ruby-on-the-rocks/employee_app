@@ -5,3 +5,4 @@ json.email employee.email
 json.phone employee.phone
 json.job_title employee.job_title
 json.department employee.department
+json.picture rails_blob_url(employee.picture) if employee.picture.attachment
